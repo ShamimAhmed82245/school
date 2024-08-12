@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home</title>
+</head>
+
+<body>
+    <h1>All Students</h1>
+    {% for student in students %}
+    <div>{{student.name}}</div>
+    {% endfor %}
+    {% if user.is_authenticated %}
+    {{user}}
+    {% endif %}
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+</body>
+
+</html>

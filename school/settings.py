@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
-    'teachers'
+    'teachers',
+    'sessiontut',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# BUILD IN AUTHENTICATION PATH
+
+LOGIN_REDIRECT_URL = '/student/home/'
+LOGOUT_REDIRECT_URL = '/account/login/'
